@@ -1,0 +1,440 @@
+:root {
+    --black-color: #000;
+    --hover-word-color: #e34444 ;
+    --white-color: #fff;
+    --border-color: #eaeaea;
+    --heading-word-color: #333;
+    --content-word-color: #666;
+    --header-height: 40px;
+    --line-height-link: 2.7rem;
+    --width-cart-img:89px;
+    --height-top-emotion:35px;
+}
+
+
+* {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    
+}
+
+
+
+
+/* nội dung hiện sub */
+
+.container__shopping-status--has-product-active:hover .container__shopping-status-has-products, 
+.container__shopping-status--no-product-active:hover .container__shopping-status-no-products,
+.container__sub-filter-item:hover .container__sub-Single-post-list,
+.container__filter-item:hover .container__sub-filter-list,
+.container__filter-item:hover .container__shortcodes-wrapper,
+.container__filter-item:hover .container__shop-wrapper,
+.container__filter-item:hover .container__furniture-wrapper,
+.container__filter-item:hover .container__bedroom-furniture-wrapper,
+.header__navbar-item--firstly:hover .header__navbar-subnav-list {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+}
+
+.container__shopping-status-has-products,
+.container__shopping-status-no-products,
+.container__sub-Single-post-list,
+.container__sub-filter-list,
+.container__bedroom-furniture-wrapper, 
+.container__shortcodes-wrapper,
+.container__shop-wrapper,
+.container__furniture-wrapper,
+.header__navbar-subnav-list {
+    position: absolute;
+    width: 100%;
+    top: calc(100% - 3px);
+    background-color: var(--white-color);
+    left: 0;
+    border: 1px solid var(--border-color);
+    z-index: 4;
+    padding: 20px 15px 30px;
+    visibility: hidden;
+    -webkit-transform: translateY(25px);
+        -ms-transform: translateY(25px);
+            transform: translateY(25px);
+    opacity: 0;
+    -webkit-transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease;
+    transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease;
+    -o-transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease;
+    transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease;
+    transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.header__navbar-subnav-list::before {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 13px;
+    border-width: 10px 10px;
+    border-style: solid;
+    bottom: 100%;
+    height: 10px;
+    border-color: transparent transparent var(--white-color) transparent;
+}
+
+
+.header__navbar-subnav-item:hover {
+    background-color: #f5f5f5;
+}
+
+.header__navbar-subnav-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #888;
+    padding: 15px 0 15px 10px;
+}
+
+/* Đầu nhọn có viền */
+.container__shopping-status-has-products::before,
+.container__shopping-status-no-products::before,
+.container__bedroom-furniture-wrapper::before,
+.container__shortcodes-wrapper::before,
+.container__shop-wrapper::before,
+.container__furniture-wrapper::before,
+.container__sub-filter-list::before {
+    position: absolute;
+    --height: 16px;
+    bottom: calc(100% - (var(--height) / 2));
+    content: "";
+    left: 8px;
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+    border: 1px solid var(--border-color);
+    border-top: transparent;
+    border-right: transparent;
+    width: var(--height);
+    height: var(--height);
+    background-color: var(--white-color);
+}
+
+.container__furniture-wrapper::before {
+    left: 66px;
+}
+
+.container__shop-wrapper::before {
+    left: 511px;
+}
+
+.container__shortcodes-wrapper::before {
+    left: 625px;
+}
+.container__bedroom-furniture-wrapper::before {
+    left: 350px;
+}
+
+.container__shopping-status-has-products::before,
+.container__shopping-status-no-products::before {
+    left: unset;
+    right: 27px;
+}
+
+/* Thanh chắn */
+.container__shopping-status-has-products::after,
+.container__shopping-status-no-products::after,
+.container__bedroom-furniture-wrapper::after,
+.container__shortcodes-wrapper::after,
+.container__shop-wrapper::after,
+.container__furniture-wrapper::after,
+.container__sub-filter-list::after,
+.header__navbar-subnav-list::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 78px;
+    /* background-color: red; */
+    bottom: 97%;
+    cursor: pointer;
+    left: 0px;
+}
+
+.header__navbar-subnav-list::after {
+    width: 100%; 
+}
+
+.container__furniture-wrapper::after {
+    left: 60px;
+}
+
+.container__shop-wrapper::after {
+    left: 500px;
+    width: 50px;
+}
+
+.container__shortcodes-wrapper::after {
+    left: 615px;
+    width: 106px;
+}
+
+.container__bedroom-furniture-wrapper::after {
+    width: 12%;
+    left: 335px;
+}
+.container__shopping-status-has-products::after,
+.container__shopping-status-no-products::after {
+    left: unset;
+    right: 0;
+    width: 100px;
+}
+
+/* hover ảnh 50% */
+.container__shortcodes-img-link:hover::before,
+.container__furniture-img-link:hover::before {
+    right: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.container__shortcodes-img-link:hover::after,
+.container__furniture-img-link:hover::after {
+    top: 50%;
+    bottom: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.container__shortcodes-img-link::before,
+.container__furniture-img-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* background-color: red; */
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    z-index: 1;
+}
+
+.container__shortcodes-img-link::after,
+.container__furniture-img-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* background-color: yellow; */
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+/*hover ảnh viền border  */
+.container__banner-upper-right {
+    overflow: hidden;
+    height: 257px;
+}
+
+.container__banner-upper-right-wrapper {
+    height: 100%;
+}
+
+.container__banner-upper-right-link:hover .container__banner-upper-right-wrapper::after,
+.container__banner-upper-right-link:hover::before,
+.container__banner-upper-right-link:hover::after {
+    --scale: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.container__banner-upper-right-link::before,
+.container__banner-upper-right-link::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 15px;
+    right: 15px;
+    left: 15px;
+    bottom: 15px;
+    border-top: 1px solid rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.8);
+    --scale: 0.1;
+    -webkit-transform: scaleX(var(--scale));
+        -ms-transform: scaleX(var(--scale));
+            transform: scaleX(var(--scale));
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    z-index: 1;
+}
+
+.container__banner-upper-right-link::after {
+    border-bottom: unset;
+    border-top: unset;
+    border-right: 1px solid rgba(255,255,255,0.8);
+    border-left: 1px solid rgba(255,255,255,0.8);
+    -webkit-transform: scaleY(var(--scale));
+        -ms-transform: scaleY(var(--scale));
+            transform: scaleY(var(--scale));
+}
+    
+.container__banner-upper-right-link {
+    display: block;
+    position: relative;
+    height: 100%;
+}
+    
+.container__banner-upper-right-wrapper::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.container__banner-upper-right-img {
+    width: 100%;
+    height: 100%;
+} 
+  
+/* hover ảnh 2 cánh */
+.container__advertisement-row-right {
+    margin-top: 30px;
+}
+
+.container__banner-below-right {
+    height: 257px;
+    overflow: hidden;
+}
+
+.container__banner-below-left-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.container__banner-below-left-link:hover::after {
+    left: 50%;
+}   
+
+.container__banner-below-left-link:hover::before {
+    right:  50%;
+}
+   
+.container__banner-below-left-link:hover::after,
+.container__banner-below-left-link:hover::before {
+    width: 50%;
+    opacity: 1;
+}
+
+.container__banner-below-left-link::after,
+.container__banner-below-left-link::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    width: 0;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.container__banner-below-left-link::after {
+    left: unset !important;
+    right: 0;
+}
+
+/* hover ảnh có dấu cộng */
+.container__banner-below-right-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container__banner-below-right-link:hover::before {
+    visibility: visible;
+    opacity: 0.6;
+    -webkit-transform: scale(1) rotateY(180deg);
+            transform: scale(1) rotateY(180deg);
+}
+
+.container__banner-below-right-link::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../img/slider__plus.png) no-repeat scroll center center/60px 60px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0.4) rotateY(0);
+            transform: scale(0.4) rotateY(0);
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.container__banner-below-right-img {
+    width: 100%;
+    height: 100%;
+}
+/* button loading */
+.btn {
+    margin: 0 auto;
+    line-height: 4rem;
+    width: 260px;
+    height: 40px;
+    padding: 0;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--white-color);
+    font-weight: 700;
+    color: var(--content-word-color);
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+.btn:hover {
+    background-color: var(--hover-word-color);
+    color: var(--white-color);
+}
